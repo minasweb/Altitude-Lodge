@@ -27,7 +27,7 @@ https://novel-mole.cloudvent.net/
 /*  Temporary Styles */
 
  * {
-    padding: 0.5rem;
+    padding-right: 0.5rem;
     border: 2px solid rgb(200,200,200);
 } 
 
@@ -114,7 +114,7 @@ https://novel-mole.cloudvent.net/
 .text-right  { text-align: right; }
 
 
-.text-colorful{color:#a2745c }
+.text-featured{color:#bbbb9b; }
 .text-light { color: white; } 
 
 .text-small{font-size:1.5rem;}
@@ -130,7 +130,13 @@ https://novel-mole.cloudvent.net/
 .font-weight-bold {font-weight:600;}
 .font-weight-extra-bold {font-weight:800;}
 
-
+.fixed{
+    position:fixed;
+    margin:0;
+    top:0;
+    left:0;
+    right:0;
+}
 /* General typography & universal styles  */
 
 html, 
@@ -171,6 +177,12 @@ h2{
     margin-bottom:0.5rem;
 }
 
+h3{
+   font-size:1.6rem;
+   font-weight:600;
+   letter-spacing:0.01em;
+   text-transform:uppercase;
+}
 p{
     font-weight:300;
     line-height:1.5;
@@ -213,19 +225,20 @@ a:hover{
     text-transform:capitalize;
     font-size:1.3rem;
     display:inline-block;
-    font-weight:500;
+    font-weight:500;;
 }
 
 .button{
-    paddin:1rem;
-    border:1px solid white;
+    border:2px solid white;
     text-transform:uppercase;
+    font-family:"Crimson Text", serif;
+    padding: .5rem 1rem;
+    display: inline-block;
 }
 
 .button:hover{
     color:#9b9b81;
     background-color:white;
-
 }
 header a {
     font-size:19.2px;
@@ -233,6 +246,10 @@ header a {
     letter-spacing:1.92px;
 }
 
+.bg-header {
+    background-color:#fff;
+    box-shadow: rgba(0,0,0,.08) 0 5px 20px;
+  }
 nav a {
     padding: 0 .8rem;
 }
@@ -304,6 +321,7 @@ footer .fa{
 
 
 .bg-fire{background-image:url('images/fire.jpg');}
+.bg-social{background-image:url('images/social.jpg');}
 
 
 /* General CSS Responsive Styles (Apply everywhere unless overridden) */ 
@@ -331,7 +349,7 @@ body { border: 2px solid green;
   .md-text-right     { text-align: right; }
 
   .md-tall-80 {min-height:80vh;}
-
+}
 
 
 /* ------- SM Media Query (48em / 768px) --------------- */ 
