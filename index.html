@@ -1,72 +1,72 @@
-
-<!DOCTYPE html>
-<html>
-
-    <!------- This is the head of the HTML for linking external resources & metadata ------->
-    <head> 
-    
-             <!-- Viewport meta tag -->
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-            <!-- The title for SEO & browser tabs -->
-            <title> Altitude Lodge </title>
-
-            <!-- Gridlex -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css">
-    
-            <!-- Add Google Fonts Here  -->
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Sans+Pro:wght@200;300;400;600&display=swap" rel="stylesheet"> 
-
-            <!-- My own custom stylesheet -->
-            <link rel="stylesheet" href="/style.css">
-       
-    </head>
-
-    <!------ This is the body, where all of the contents of our page go  ------->
-    <body>
-        <header class="z-index-top fixed bg-header">
-            <div class="grid-middle tall-10">
-                <div class="col-4_sm-12_xs-9-middle sm-center xs-left padded-0">
-                    <h1>Altitude Lodge</h1>
-                </div>
-                <nav class="col-8_xs-12-middle text-right sm-center xs-hide menu padded-0">
-                    <a href="#About"> About </a>
-                    <a href="#Gallery"> Gallery </a>
-                    <a href="#Reservations"> Reservations </a>
-                    <a href="#Contact"> Contact </a>
-                </nav>
-
-     <!---mobile menu-
-                <div class="mobile-menu-button relative">
-                    <i class="fa fa-bars"></i>
-
-                </div>
-            </div>-->
+---
+layout: default
+title: The Altitude Lodge
+gallery:
+ - column-size: col-6_xs-12
+   background_image: /images/fire.jpg
+   aspect-ratio: portrait
+ - column-size: col-6_xs-12
+   background_image: /images/campfire.jpg
+   aspect-ratio: portrait
+---
+     
+     <!--Top Nav-->
+     <header class="z-index-top sticky bg-header padded-lr">
+        {% include header-nav.html %}
+      
         </header>
-
-        <section id="up" class="bg-image tall-80 bg-fixed absolute">
-            <div class="grid tall-80">
-                <div class="col-12-middle grid-right padded-2 sm-center">
+<!--scrolling header-->
+        <section id="up" class="bg-image bg-front tall-80 bg-fixed absolute">
+            <!--capped width-->
+            <div class="grid capped-width-xl tall-85">
+                <div class="col-12-middle text-right padded-2 sm-center">
                     <a href="#Reservations" class="button-1">Make a Reservation</a>
                     <a href="#About"        class="button-1">Take a look</a>
-                   
                 </div>
             </div>
         </section>
-    
-        <!--BOOKMARK-->
+        <!--MD holder-->
+        <div class="tall-85 hide"></div>
 
+        <!--BOOKMARK-->
+        <section class="grid capped-width-xl sticky bookmark md-hide">
+            <div class="col-5-bottom grid bg-image bg-front tall-85">
+                <div class="col-12-top text-center padded-1">
+                    <a class="fas fa-sort-up" href="#up"></a>
+                 </div>
+                 <div class="col-12-bottom text-center padded-1 padded-bookmark">
+                     <a class="padded-r-1" href="#Reservations">
+                         <p class="button">Make a reservation</p>
+                     </a>
+                     <a class="padded-r-1 padded-05-lg" href="#Contact">
+                        <p class="button">Contact Us</p>
+                    </a>
+                 </div>
+            </div>
+        </section>
+        
         <!--NEWSLETTER-->
-        <section id="newsletter" class="grid-center bg-dark text-light news">
-            <p>Sign up to our newsletter to accedd special deals.</p>
+        <section id="newsletter" class="grid-center bg-dark center text-light news">
+                <!--capped width-->
+            <div class="grid-middle-center tall-5 capped-width-xl">
+                <div class="col-5 md-hide"></div>
+                <!--z-index to bring text above for hover-->
+                <div class="col-7_md-12-middle padded z-index">
+                    <!--News activ ates jQuery pop up with embeded form-->
+                    <news>
+                        <p>Sign up to our newsletter to accedd special deals.
+                            <i class="fas fa-angle-double-right"></i>
+                        </p>
+                    </news>
+                </div>
+            </div>
         </section>
 
         <!--ABOUT-->
-        <section id="about" class="grid tall-50 padded-3 padded-b ">
+        <section id="about" class="grid tall-50 padded-3 padded-b capped-width-xl ">
             <div class="col-5 md-hide"></div>
             <div class="col-7_md-12-middle padded">
+                <!--Add mailerlite-->
                 <h2>about us</h2>
                 <p>Welcmoe to the Lodge! Altitude Lodge offers a completely off-grid experience for nature lovers. Our A-frame cabins are constructed from local Astralian timbers, set within the breathtaking Blue Monthains.</p>
                 <p>Relax with a cup of coffee on the deck and hear the sounds of the local wildlife. At night, warm up around a crackling fire under the Southers Cross.</p>
@@ -75,30 +75,19 @@
         </section>
 
         <!--GALLERY-->
-        <section id="gallery" class="grid padded-b padded-3">
+        <section id="gallery" class="grid padded-b padded-3 capped-width-xl ">
             <div class="col-5 md-hide"></div>
+            <!--gallery box-->
             <div class="col-7_md-12-middle padded">
-                <h2>gallery</h2>
+                <h2>Gallery</h2>
                 <div id="lightgallery" class="grid relative gallery">
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait"></div>
+                    {% for item in page.index %}
+                    <a class="{{item.column-size}} gallery-item padded-t-2" href="{{item.background_image}}">
+                        <div class="bg-image {{item.aspect-ratio}}"
+                        style="background-image:url('{{item.background_image}}');">
+                    </div>
                     </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait-tall"></div>
-                    </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait-tall"></div>
-                    </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait"></div>
-                    </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait"></div>
-                    </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait-tall"></div>
-                    </a>
-                
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -156,48 +145,3 @@
                 </div>
             </div>
         </section>
-<!-----Footer------->
-        <footer id="contact" class="text-light bg-dark padded padded-b-0 tall-10">
-            <div class="grid">
-                <div class="col-6_sm-12 grid-left sm-center">
-                    <h3>Altitude Lodge</h3>
-                </div>
-                <div class="col-6_sm-12 text-right padded padded-b-0">
-                    <div class="padded-r col-12-middle address">
-                        <p class="font-weight-bold">Contact us.</p>
-                        <a href="mailto:hello@altitudehuts.com?subject=BookingEnquiry"> hello@altitudehuts.com</a>
-                        <a href="tel:+61-000-000">+61 000 000</a>
-                    </div>
-                    <div clas="padded col-12-middle sm-hide">
-                        <p class="font-weight-bold"> Visit us.</p>
-                        <nav>
-                            <a href="#">
-                                <i class="fa-brands fa-pinterest-p"></i>
-                            </a>
-                            <a href="#">
-                                <!---put in logo-->
-                            </a>
-                            <a href="#">
-                                <!---put in logo-->
-                            </a>
-                            <a href="#">
-                                <!---put in logo-->
-                            </a>
-                        </nav>
-                    </div>
-                    <div class="col-12 padded-1 ">
-                        <p class="subtle">
-                            Copyright 2021 (fill in I) Website by
-                            <a class="subtle" href="#"> the Mahalo Creative</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </footer>
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-        </script>
-    </body>
-</html>

@@ -19,54 +19,110 @@
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
                 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Sans+Pro:wght@200;300;400;600&display=swap" rel="stylesheet"> 
 
+            <!--Font Awesome-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            
             <!-- My own custom stylesheet -->
             <link rel="stylesheet" href="/style.css">
        
     </head>
 
     <!------ This is the body, where all of the contents of our page go  ------->
-    <body>
-        <header class="z-index-top fixed bg-header">
-            <div class="grid-middle tall-10">
-                <div class="col-4_sm-12_xs-9-middle sm-center xs-left padded-0">
-                    <h1>Altitude Lodge</h1>
-                </div>
-                <nav class="col-8_xs-12-middle text-right sm-center xs-hide menu padded-0">
-                    <a href="#About"> About </a>
-                    <a href="#Gallery"> Gallery </a>
-                    <a href="#Reservations"> Reservations </a>
-                    <a href="#Contact"> Contact </a>
-                </nav>
+    <body style="position:relative;">
 
-     <!---mobile menu-
-                <div class="mobile-menu-button relative">
-                    <i class="fa fa-bars"></i>
+             <!--Top Nav-->
+     <header class="z-index-top sticky bg-header padded-lr">
+        <div class="grid-middle tall-10 capped-width-xl">
+    <div class="col-4_sm-12_xs-9-middle sm-center xs-left padded-0">
+        <h1>Altitude Lodge</h1>
+    </div>
+<!--Desktop Menu-->
+    <nav class="col-8_xs-12-middle text-right sm-center xs-hide menu padded-0">
+        <a href="#About"> About </a>
+        <a href="#Gallery"> Gallery </a>
+        <a href="#Reservations"> Reservations </a>
+        <a href="#Contact"> Contact </a>
+    </nav>
 
-                </div>
-            </div>-->
+<!---mobile menu--->
+    <div class="mobile-menu-button relative">
+        <i class="fa fa-bars"></i>
+        <i class="fa fa-times"></i>
+<!--only appears when the nav is open-->
+    </div>
+    <nav class="mobile-nav">
+        <span class="nav-title">
+            Altitude Lodge
+        </span>
+        <a href="#About"> About </a>
+        <a href="#Gallery"> Gallery </a>
+        <a href="#Reservations"> Reservations </a>
+        <a href="#Contact"> Contact </a>
+        <span class="nav-title">
+            Socials
+        </span>
+        <nav>
+            <a href="#"> <i class="fa-brands fa-pinterest-p"></i> </a>
+            <a href="#"> <i class="fa-brands fa-instagram"></i></a>
+            <a href="#"> <i class="fa-brands fa-instagram"></i></a>
+            <a href="#"> <i class="fa-brands fa-twitter"></i></a>
+         </nav>
+    </nav>
+</div>
+      
         </header>
-
-        <section id="up" class="bg-image tall-80 bg-fixed absolute">
-            <div class="grid tall-80">
-                <div class="col-12-middle grid-right padded-2 sm-center">
+<!--scrolling header-->
+        <section id="up" class="bg-image bg-front tall-80 bg-fixed absolute">
+            <!--capped width-->
+            <div class="grid capped-width-xl tall-85">
+                <div class="col-12-middle text-right padded-2 sm-center">
                     <a href="#Reservations" class="button-1">Make a Reservation</a>
                     <a href="#About"        class="button-1">Take a look</a>
-                   
                 </div>
             </div>
         </section>
-    
-        <!--BOOKMARK-->
+        <!--MD holder-->
+        <div class="tall-85 hide"></div>
 
+        <!--BOOKMARK-->
+        <section class="grid capped-width-xl sticky bookmark md-hide">
+            <div class="col-5-bottom grid bg-image bg-front tall-85">
+                <div class="col-12-top text-center padded-1">
+                    <a class="fas fa-sort-up" href="#up"></a>
+                 </div>
+                 <div class="col-12-bottom text-center padded-1 padded-bookmark">
+                     <a class="padded-r-1" href="#Reservations">
+                         <p class="button">Make a reservation</p>
+                     </a>
+                     <a class="padded-r-1 padded-05-lg" href="#Contact">
+                        <p class="button">Contact Us</p>
+                    </a>
+                 </div>
+            </div>
+        </section>
+        
         <!--NEWSLETTER-->
-        <section id="newsletter" class="grid-center bg-dark text-light news">
-            <p>Sign up to our newsletter to accedd special deals.</p>
+        <section id="newsletter" class="grid-center bg-dark center text-light news">
+                <!--capped width-->
+            <div class="grid-middle-center tall-5 capped-width-xl">
+                <div class="col-5 md-hide"></div>
+                <!--z-index to bring text above for hover-->
+                <div class="col-7_md-12-middle padded z-index">
+                    <!--News activ ates jQuery pop up with embeded form-->
+                    <news>
+                        <p>Sign up to our newsletter to accedd special deals.
+                            <i class="fas fa-angle-double-right"></i>
+                        </p>
+                    </news>
+                </div>
+            </div>
         </section>
 
         <!--ABOUT-->
-        <section id="about" class="grid tall-50 padded-3 padded-b ">
+        <section id="about" class="grid tall-50 padded-3 padded-b capped-width-xl ">
             <div class="col-5 md-hide"></div>
             <div class="col-7_md-12-middle padded">
+                <!--Add mailerlite-->
                 <h2>about us</h2>
                 <p>Welcmoe to the Lodge! Altitude Lodge offers a completely off-grid experience for nature lovers. Our A-frame cabins are constructed from local Astralian timbers, set within the breathtaking Blue Monthains.</p>
                 <p>Relax with a cup of coffee on the deck and hear the sounds of the local wildlife. At night, warm up around a crackling fire under the Southers Cross.</p>
@@ -75,30 +131,13 @@
         </section>
 
         <!--GALLERY-->
-        <section id="gallery" class="grid padded-b padded-3">
+        <section id="gallery" class="grid padded-b padded-3 capped-width-xl ">
             <div class="col-5 md-hide"></div>
+            <!--gallery box-->
             <div class="col-7_md-12-middle padded">
-                <h2>gallery</h2>
+                <h2>Gallery</h2>
                 <div id="lightgallery" class="grid relative gallery">
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait"></div>
-                    </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait-tall"></div>
-                    </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait-tall"></div>
-                    </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait"></div>
-                    </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait"></div>
-                    </a>
-                    <a class="col-6_xs-12 padded-t-2" href="/images/fire.jpg" title="Fireplace">
-                        <div class="bg-image bg-fire portrait-tall"></div>
-                    </a>
-                
+                    
                 </div>
             </div>
         </section>
@@ -156,7 +195,9 @@
                 </div>
             </div>
         </section>
-<!-----Footer------->
+
+
+        <!-----Footer------->
         <footer id="contact" class="text-light bg-dark padded padded-b-0 tall-10">
             <div class="grid">
                 <div class="col-6_sm-12 grid-left sm-center">
@@ -197,7 +238,19 @@
         </footer>
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-        </script>
+<!--Add jQuery-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!--external tools(slick slider, pop up gallery)-->
+        <!--AOS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Lightgallery for pop-ups  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/lightgallery.min.js"></script>
+
+    
+ <!--custom java script-->
+    <script src="scripts.js"></script>
+
     </body>
 </html>

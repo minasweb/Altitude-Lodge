@@ -33,11 +33,13 @@ https://novel-mole.cloudvent.net/
 
 
 /* Re-usable Utiity Classes  */
+.tall-5  { min-height: 5vh;  }
 .tall-10 { min-height: 10vh; }
 .tall-50 { min-height: 50vh; }
 .tall-60 { min-height: 60vh; }
 .tall-70 { min-height: 70vh; }
 .tall-80 { min-height: 80vh; }
+.tall-85 { min-height:85vh; }
 .tall-90 { min-height: 90vh; }
 
 
@@ -102,12 +104,12 @@ https://novel-mole.cloudvent.net/
 .margin-tb { margin-top: 5%; margin-bottom: 5%; }
 .margin-lr { margin-left: 5%; margin-right: 5%; }
 
-.bg-white    { background-color: white;}
-.bg-featured { background-color: #9b9b81; }
-.bg-dark     { background-color: #a2745c;  }
-.bg-black    { background-color: black;}
 
 
+
+
+
+/*Text styles*/
 
 .text-left   { text-align: left; }
 .text-center { text-align: center; }
@@ -130,20 +132,23 @@ https://novel-mole.cloudvent.net/
 .font-weight-bold {font-weight:600;}
 .font-weight-extra-bold {font-weight:800;}
 
-.fixed{
-    position:fixed;
-    margin:0;
-    top:0;
-    left:0;
-    right:0;
-}
+
+
+
+
+
+
 /* General typography & universal styles  */
 
 html, 
 body {
     border: none;
     font-family: "Source Sans Pro", sans-serif;
-    color:rgb(60,60,60)
+    color:#3c3c3c;
+    font-weight:300;
+    cursor: default;
+    background-color:#faf9f9;
+    display: block;
 } 
 
  h1,h2,h3,h4,h5,h6 {
@@ -152,7 +157,6 @@ body {
     line-height: 1.1;
     margin-bottom: 1.2rem;
   }
-  
   
   h2:last-child, 
   h3:last-child, 
@@ -198,6 +202,7 @@ p{
     font-size:1rem;
     letter-spacing:0.05em;
 }
+
 /*Links*/
 a {
     color:inherit;
@@ -214,42 +219,43 @@ a:hover{
     color:#a2745c;
 }
 
-.button-1{
+.button-1,
+.button{
+    font-family:"Crimson Text", serif;
+    display: inline-block;
+    border:2px solid white;
     padding:0.5rem 1rem;
+    text-decoration:none;
+}
+
+.button-1{
     background-color:white;
     border-radius:0.3rem;
-    font-family: "Crimson Text", serif;
     margin:0.2rem;
-    border:none;
-    text-decoration:none;
     text-transform:capitalize;
     font-size:1.3rem;
-    display:inline-block;
     font-weight:500;;
 }
 
 .button{
-    border:2px solid white;
     text-transform:uppercase;
-    font-family:"Crimson Text", serif;
-    padding: .5rem 1rem;
-    display: inline-block;
+    font-size:1rem;
+    color:white;
+    font-weight:400;
 }
 
 .button:hover{
     color:#9b9b81;
     background-color:white;
 }
+
+
 header a {
-    font-size:19.2px;
+    font-size:1.2rem;;
     font-weight:300;
-    letter-spacing:1.92px;
+    letter-spacing:0.1em;
 }
 
-.bg-header {
-    background-color:#fff;
-    box-shadow: rgba(0,0,0,.08) 0 5px 20px;
-  }
 nav a {
     padding: 0 .8rem;
 }
@@ -273,6 +279,14 @@ nav a {
     box-sizing:border-box;
 }
 
+.fa,
+.fas{
+    font-weight:900;
+    "Font Awesome 5 Free";
+    display:inline-block;
+    
+}
+
 .gallery [class*="col-"]{
     padding:.7%;
 }
@@ -281,11 +295,29 @@ nav a {
     flex-basis: 50%;
     max-width: 50%;
 }
+[class*="grid-"], [class*="grid_"], [class~="grid"] {
+    flex-flow:nowrap;
+}
 
 [class*="col"]  { padding: 0;}
 [class*="col-"] { flex: none;}
 
+[class*=col-][class*=-bottom] {
+    align-self: flex-end;
+}
+/* Header - mobile menu*/
 
+.mobile-nav {
+    display:none;
+
+}
+.mobile-menu-button{
+    display:none;
+    position:absolute;
+    padding:5%;
+    right:0;
+    z-index:10;
+}
 /*  Footer */
 footer a {
     display:block;
@@ -293,6 +325,97 @@ footer a {
 footer .fa{
     font-size:1rem;
 }
+
+
+
+/* NEWS*/
+
+.news p{
+    font-size:1.1rem;
+    color:#fff;
+    line-height:1.2rem;
+    cursor:pointer;
+    padding: 1rem 1rem;
+    margin-bottom: 0;
+    letter-spacing:.1em;
+    text-decoration:none;
+}
+
+.news p:hover{color:#d3b4a2;}
+
+
+
+/*BOOKMARK*/
+
+.bookmark{
+    top:10vh;
+    padding-left:1.2rem;
+    z-index:2;
+    width:100%;
+}
+
+.padded-bookmark{
+    padding-bottom:12rem;
+}
+.popup{
+    height:auto;
+    max-width:750px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    box-shadow:5px 6px 18px rgb(0 0 0 / 50%);
+    visibility: hidden;
+    opacity:0;
+    transition:all .3s;
+    z-index:5;
+    width:100%;
+    overflow:hidden;
+}
+
+
+
+
+/*positioning*/
+
+.absolut{ 
+    position:absolute;
+    width:100%;
+    z-index:3;
+}
+.relative{
+    position: relative;
+    z-index:3;
+}
+
+.sticky{
+    position: sticky;
+    top:0;
+    z-index:6;
+
+}
+
+.fixed{
+    position:fixed;
+    margin:0;
+    top:0;
+    left:0;
+    right:0;
+}
+
+.z-index-top{
+    z-index:4;
+}
+
+.z-index{
+    z-index:3;
+}
+
+
+
+
+
+
+
 
 /* Images & Background Images */
 /*background-image: url('https://source.unsplash.com/Sg3XwuEpybU');*/
@@ -308,10 +431,20 @@ footer .fa{
 .landscape {padding-bottom: 66%;}
 .landscape-wide {padding-bottom: 56%;}
     
+/* backgrounds*/
 
-    
+.bg-header {
+    background-color:#fff;
+    box-shadow: rgba(0,0,0,.08) 0 5px 20px;
+  }
+
+.bg-white    { background-color: white;}
+.bg-featured { background-color: #9b9b81; }
+.bg-dark     { background-color: #a2745c;  }
+.bg-black    { background-color: black;}
+
 .bg-image {
-    background-image: url('images/front.jpg');
+    background-image: url('/images/front.jpg');
     background-size: cover;
     background-color: #5a5a5a;
     /*min-height:10rem; */
@@ -319,16 +452,34 @@ footer .fa{
     background-repeat: no-repeat;
 }
 
+.bg-fire{background-image:url('/images/fire.jpg');}
+.bg-social{background-image:url('/images/social.jpg');}
+.bg-camp {
+    background-image:url('/images/campfire.jpg');
+    background-position:50% 70%;
+    background-blend-mode; multiply;
+    bakcground-color:#a7a7a7;
+}
 
-.bg-fire{background-image:url('images/fire.jpg');}
-.bg-social{background-image:url('images/social.jpg');}
+.bg-front {background-image:url('/images/front.jpg') }
+.bg-fixed{ background-attachment:fixed;}
+
+
+.capped-width-xl{
+    max-width: 1440px;
+    margin:auto;
+}
+
+
+
+
 
 
 /* General CSS Responsive Styles (Apply everywhere unless overridden) */ 
-
 .xs-show, 
 .sm-show,
-.md-show {
+.md-show, 
+.hide  {
 	display: none;
 }
 
@@ -342,7 +493,6 @@ body { border: 2px solid green;
 
   .md-show { display: block; }
   .md-hide { display: none;  }
-
 
   .md-text-center    { text-align: center; }
   .md-text-left      { text-align: left; }
@@ -383,6 +533,8 @@ body { border: 2px solid green;
 
   .sm-padded-t-1     {padding-top:1rem;}
 
+
+  .sm-center        { text-align: center;}
   .logo h2           {font-size:2rem;}
   header h3          {font-size:11vw;}
 }
@@ -398,11 +550,15 @@ body { border: 2px solid green;
   .xs-show { display: block; }
   .xs-hide { display: none;  }
 
+  .xs-left{ text-align:left}
     h1{
       font-size:1.4rem;
       line-height:1.1;
   }
+
+  .mobile-menu-button{display:block;}
   
+
 }
 
 /* ------- Optional XXS Media Query (25em / 400px) NOT part of default Gridlex styling--------------- */ 
