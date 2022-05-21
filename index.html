@@ -6,8 +6,20 @@ gallery:
    background_image: /images/fire.jpg
    aspect-ratio: portrait
  - column-size: col-6_xs-12
-   background_image: /images/campfire.jpg
+   background_image: /images/internal.jpg
+   aspect-ratio: portrait-tall
+ - column-size: col-6_xs-12
+   background_image: /images/front2.jpg
+   aspect-ratio: portrait-tall
+ - column-size: col-6_xs-12
+   background_image: /images/kitchen.jpg
    aspect-ratio: portrait
+ - column-size: col-6_xs-12
+   background_image: /images/bath.jpg
+   aspect-ratio: portrait
+ - column-size: col-6_xs-12
+   background_image: /images/campfire.jpg
+   aspect-ratio: portrait-tall
 ---
      
      <!--Top Nav-->
@@ -36,22 +48,22 @@ gallery:
                  </div>
                  <div class="col-12-bottom text-center padded-1 padded-bookmark">
                      <a class="padded-r-1" href="#Reservations">
-                         <p class="button">Make a reservation</p>
+                         <p class="button-2">Make a reservation</p>
                      </a>
                      <a class="padded-r-1 padded-05-lg" href="#Contact">
-                        <p class="button">Contact Us</p>
+                        <p class="button-2">Contact Us</p>
                     </a>
                  </div>
             </div>
         </section>
         
         <!--NEWSLETTER-->
-        <section id="newsletter" class="grid-center bg-dark center text-light news">
+        <section id="newsletter" class="grid text-center bg-dark center text-light news">
                 <!--capped width-->
-            <div class="grid-middle-center tall-5 capped-width-xl">
+          <!--  <div class="grid tall-5 capped-width-xl">-->
                 <div class="col-5 md-hide"></div>
                 <!--z-index to bring text above for hover-->
-                <div class="col-7_md-12-middle padded z-index">
+                <div class="col-7_md-12-middle z-index">
                     <!--News activ ates jQuery pop up with embeded form-->
                     <news>
                         <p>Sign up to our newsletter to accedd special deals.
@@ -81,7 +93,7 @@ gallery:
             <div class="col-7_md-12-middle padded">
                 <h2>Gallery</h2>
                 <div id="lightgallery" class="grid relative gallery">
-                    {% for item in page.index %}
+                    {% for item in page.gallery %}
                     <a class="{{item.column-size}} gallery-item padded-t-2" href="{{item.background_image}}">
                         <div class="bg-image {{item.aspect-ratio}}"
                         style="background-image:url('{{item.background_image}}');">
@@ -101,16 +113,16 @@ gallery:
                         <h3>Share your stay with us</h3>
                         <nav class="padded-1 z-index relative">
                             <a href="#">
-                                <!---insert pinterst logo-->
+                                <i class="fab fa-pinterest-p"></i>
                             </a>
                             <a href="#">
-                                <!---insert pinterst logo-->
+                                <i class="fab fa-instagram"></i>
                             </a>
                             <a href="#">
-                                <!---insert pinterst logo-->
+                                <i class="fab fa-facebook-f"></i>
                             </a>
                             <a href="#">
-                                <!---insert pinterst logo-->
+                                <i class="fab fa-twitter"></i>
                             </a>
                         </nav>
                     </div>
@@ -138,7 +150,7 @@ gallery:
                         </div>
                         <div class="col-12 padded-2 text-center z-index">
                             <a href="#" >
-                                <p class="button"> book now</p>
+                                <p class="button-3"> book now</p>
                             </a>
                         </div>
                     </div>

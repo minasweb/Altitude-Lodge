@@ -24,11 +24,27 @@ https://novel-mole.cloudvent.net/
     box-sizing: border-box;
 }
 
+
+/* all these special gridlex styles on top, otherwise they will override other styles*/
+[class*="grid-"] > [class*="col-6"], [class*="grid_"] > [class*="col-6"], [class~="grid"] > [class*="col-6"] {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+[class*="grid-"], [class*="grid_"], [class~="grid"] {
+    flex-flow:row wrap;
+}
+
+[class*="col"]  { padding: 0;}
+[class*="col-"] { flex: none;}
+
+[class*=col-][class*=-bottom] {
+    align-self: flex-end;
+}
 /*  Temporary Styles */
 
  * {
     padding-right: 0.5rem;
-    border: 2px solid rgb(200,200,200);
+    border: 2px solid rgb(242, 239, 239);
 } 
 
 
@@ -53,8 +69,13 @@ https://novel-mole.cloudvent.net/
 .padded-2 { padding: 2rem; }
 .padded-3 { padding: 3rem; }
 
-.padded   { padding: 5rem;}
 
+/*.padded   { padding: 5rem;}*/
+
+.grid.padded, 
+.padded {
+    padding: 3rem;
+}
 .padded-t { padding-top: 5%; }
 .padded-b { padding-bottom: 5%; }
 .padded-l { padding-left: 5%; }
@@ -152,7 +173,7 @@ body {
 } 
 
  h1,h2,h3,h4,h5,h6 {
-    border: 2px solid rgb(179, 84, 84);
+    border: 2px solid rgb(228, 215, 215);
     font-family: "Crimson Text", serif;
     line-height: 1.1;
     margin-bottom: 1.2rem;
@@ -220,7 +241,8 @@ a:hover{
 }
 
 .button-1,
-.button{
+.button-2,
+.button-3{
     font-family:"Crimson Text", serif;
     display: inline-block;
     border:2px solid white;
@@ -237,14 +259,25 @@ a:hover{
     font-weight:500;;
 }
 
-.button{
+.button-2{
+  color:white;
+  text-transform:uppercase;
+  font-size:1rem;
+}
+
+.button-2:hover{
+    color:#a2745c;
+    border:2px solid #a2745c;
+}
+
+.button-3{
     text-transform:uppercase;
     font-size:1rem;
     color:white;
     font-weight:400;
 }
 
-.button:hover{
+.button-3:hover{
     color:#9b9b81;
     background-color:white;
 }
@@ -282,29 +315,55 @@ nav a {
 .fa,
 .fas{
     font-weight:900;
-    "Font Awesome 5 Free";
-    display:inline-block;
-    
+    display:inline-block;  
 }
+
+.fa-sort-up{
+    color:#fff;
+    font-size: 6rem;
+}
+
+/*positioning*/
+
+.absolute{ 
+    position:absolute;
+    width:100%;
+    z-index:3;
+}
+.relative{
+    position: relative;
+    z-index:3;
+}
+
+.sticky{
+    position: sticky;
+    top:0;
+    z-index:6;
+
+}
+
+.fixed{
+    position:fixed;
+    margin:0;
+    top:0;
+    left:0;
+    right:0;
+}
+
+.z-index-top{
+    z-index:4;
+}
+
+.z-index{
+    z-index:3;
+}
+
+
 
 .gallery [class*="col-"]{
     padding:.7%;
 }
 
-[class*="grid-"] > [class*="col-6"], [class*="grid_"] > [class*="col-6"], [class~="grid"] > [class*="col-6"] {
-    flex-basis: 50%;
-    max-width: 50%;
-}
-[class*="grid-"], [class*="grid_"], [class~="grid"] {
-    flex-flow:nowrap;
-}
-
-[class*="col"]  { padding: 0;}
-[class*="col-"] { flex: none;}
-
-[class*=col-][class*=-bottom] {
-    align-self: flex-end;
-}
 /* Header - mobile menu*/
 
 .mobile-nav {
@@ -319,9 +378,7 @@ nav a {
     z-index:10;
 }
 /*  Footer */
-footer a {
-    display:block;
-}
+
 footer .fa{
     font-size:1rem;
 }
@@ -375,47 +432,6 @@ footer .fa{
 
 
 
-/*positioning*/
-
-.absolut{ 
-    position:absolute;
-    width:100%;
-    z-index:3;
-}
-.relative{
-    position: relative;
-    z-index:3;
-}
-
-.sticky{
-    position: sticky;
-    top:0;
-    z-index:6;
-
-}
-
-.fixed{
-    position:fixed;
-    margin:0;
-    top:0;
-    left:0;
-    right:0;
-}
-
-.z-index-top{
-    z-index:4;
-}
-
-.z-index{
-    z-index:3;
-}
-
-
-
-
-
-
-
 
 /* Images & Background Images */
 /*background-image: url('https://source.unsplash.com/Sg3XwuEpybU');*/
@@ -457,8 +473,8 @@ footer .fa{
 .bg-camp {
     background-image:url('/images/campfire.jpg');
     background-position:50% 70%;
-    background-blend-mode; multiply;
-    bakcground-color:#a7a7a7;
+    background-blend-mode: multiply;
+    background-color:#a7a7a7;
 }
 
 .bg-front {background-image:url('/images/front.jpg') }
