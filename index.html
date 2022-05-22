@@ -93,6 +93,7 @@ gallery:
             <div class="col-7_md-12-middle padded">
                 <h2>Gallery</h2>
                 <div id="lightgallery" class="grid relative gallery">
+                 
                     {% for item in page.gallery %}
                     <a class="{{item.column-size}} gallery-item padded-t-2" href="{{item.background_image}}">
                         <div class="bg-image {{item.aspect-ratio}}"
@@ -111,7 +112,7 @@ gallery:
                 <div class="col-7_md-12 grid bg-image bg-social tall-50 text-featured bg-overlay">
                     <div class="col-12-bottom text-center padded-1 padded-l padded-r">
                         <h3>Share your stay with us</h3>
-                        <nav class="padded-1 z-index relative">
+                        <nav class="padded-1 z-index relative socials">
                             <a href="#">
                                 <i class="fab fa-pinterest-p"></i>
                             </a>

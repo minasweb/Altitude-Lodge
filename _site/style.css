@@ -44,10 +44,11 @@ https://novel-mole.cloudvent.net/
 
  * {
     padding-right: 0.5rem;
-    border: 2px solid rgb(242, 239, 239);
+   /* border: 2px solid rgb(242, 239, 239);*/
 } 
-
-
+h1,h2,h3,h4,h5,h6 {
+    /*  border: 2px solid rgb(228, 215, 215);*/
+}
 /* Re-usable Utiity Classes  */
 .tall-5  { min-height: 5vh;  }
 .tall-10 { min-height: 10vh; }
@@ -173,7 +174,6 @@ body {
 } 
 
  h1,h2,h3,h4,h5,h6 {
-    border: 2px solid rgb(228, 215, 215);
     font-family: "Crimson Text", serif;
     line-height: 1.1;
     margin-bottom: 1.2rem;
@@ -239,7 +239,9 @@ a {
 a:hover{
     color:#a2745c;
 }
-
+.socials a:hover{
+    color:#f5f5d9;
+}
 .button-1,
 .button-2,
 .button-3{
@@ -323,6 +325,9 @@ nav a {
     font-size: 6rem;
 }
 
+.fab:hover{
+    color: #f5f5d9;
+}
 /*positioning*/
 
 .absolute{ 
