@@ -154,6 +154,7 @@ h1,h2,h3,h4,h5,h6 {
 .font-weight-bold {font-weight:600;}
 .font-weight-extra-bold {font-weight:800;}
 
+.uppercase{text-transform:uppercase;}
 
 
 
@@ -325,9 +326,7 @@ nav a {
     font-size: 6rem;
 }
 
-.fab:hover{
-    color: #f5f5d9;
-}
+
 /*positioning*/
 
 .absolute{ 
@@ -388,6 +387,9 @@ footer .fa{
     font-size:1rem;
 }
 
+.transparent{height:80px;}
+.margin-l-1{margin-left:1rem;}
+.tall-cover{min-height:14rem;}
 
 
 /* NEWS*/
@@ -435,7 +437,18 @@ footer .fa{
 }
 
 
+/*Reservations*/
 
+.prices {
+    font-family: 'Crimson Text',serif;
+    padding-top: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align:center;
+}
 
 
 /* Images & Background Images */

@@ -102,39 +102,39 @@
         </section>
         
         <!--NEWSLETTER-->
-        <section id="newsletter" class="grid text-center bg-dark center text-light news">
+        <section id="newsletter" class="grid text-center bg-dark tall-5 center text-light padded-0 news">
                 <!--capped width-->
-          <!--  <div class="grid tall-5 capped-width-xl">-->
+          <!--<div class="grid tall-5 capped-with-xl">-->
                 <div class="col-5 md-hide"></div>
                 <!--z-index to bring text above for hover-->
-                <div class="col-7_md-12-middle z-index">
+                <div class="col-7_md-12-middle z-index padded-0">
                     <!--News activ ates jQuery pop up with embeded form-->
-                    <news>
-                        <p>Sign up to our newsletter to accedd special deals.
+                    <news class="padded-0">
+                        <p>Sign up to our newsletter to access special deals.
                             <i class="fas fa-angle-double-right"></i>
                         </p>
                     </news>
                 </div>
-            </div>
+          <!-- </div>--> 
         </section>
 
         <!--ABOUT-->
-        <section id="about" class="grid tall-50 padded-3 padded-b capped-width-xl ">
+        <section id="About" class="grid tall-5 capped-width-xl ">
             <div class="col-5 md-hide"></div>
-            <div class="col-7_md-12-middle padded">
+            <div class="col-7_md-12-middle padded-3">
                 <!--Add mailerlite-->
                 <h2>about us</h2>
-                <p>Welcmoe to the Lodge! Altitude Lodge offers a completely off-grid experience for nature lovers. Our A-frame cabins are constructed from local Astralian timbers, set within the breathtaking Blue Monthains.</p>
+                <p>Welcome to the Lodge! Altitude Lodge offers a completely off-grid experience for nature lovers. Our A-frame cabins are constructed from local Astralian timbers, set within the breathtaking Blue Monthains.</p>
                 <p>Relax with a cup of coffee on the deck and hear the sounds of the local wildlife. At night, warm up around a crackling fire under the Southers Cross.</p>
                 <p>If hikind is your thing, visit some of the breathtaking lookouts and stunning waterfalls the area has to offer. There are plenty of natural waterfalls and trails to explore.</p>
             </div>
         </section>
 
         <!--GALLERY-->
-        <section id="gallery" class="grid padded-b padded-3 capped-width-xl ">
+        <section id="Gallery" class="grid capped-width-xl ">
             <div class="col-5 md-hide"></div>
             <!--gallery box-->
-            <div class="col-7_md-12-middle padded">
+            <div   class="col-7_md-12-middle padded-3">
                 <h2>Gallery</h2>
                 <div id="lightgallery" class="grid relative gallery">
                  
@@ -207,14 +207,14 @@
         </section>
 
         <!---FEATURES / RESERVATIONS------>
-        <section id="reservations" class="bg-featured text-light padded-3">
+        <section id="Reservations" class="bg-featured text-light padded-3">
             <div class="grid-middle tall-50">
                 <div class="col-5 md-hide"></div>
-                <div class="col-7_md-12-middle">
+                <div class="col-7_md-12-middle padded">
                     <h2 class="text-center"> Reservations</h2>
                     <div class="grid-center-middle padded-t-2">
                         <div class="col-4_xs-6-center center ">
-                            <!---add logo-->
+                            <div class="bg-image"></div>    <!---add logo-->
                             <p class="prices">Prices from $350p/n</p>    
                         </div>
                         <div class="col-8_xs-12-right padded-1 z-index">
@@ -235,18 +235,26 @@
 
 
         <!-----Footer------->
-        <footer id="contact" class="text-light bg-dark padded padded-b-0 tall-10">
+        <footer id="Contact" class="text-light bg-dark tall-10">
             <div class="grid">
-                <div class="col-6_sm-12 grid-left sm-center">
-                    <h3>Altitude Lodge</h3>
+                <div class="col-6_sm-12 grid-left sm-center bg-dark">
+                    <!--Transparent gap-->
+                    <div class="col-10 md-hide transparent marin-l-1"></div>
+                    <!--logo and overlaid background color-->
+                    <div class="col-12 grid-center-middle text-center bg-dark tall-cover z-index">
+                        <div class="col-4_md-12 padded-t text-right md-center"></div>
+                        <div class="col-6_md-12 text-left md-top md-center">
+                             <h3>Altitude Lodge</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6_sm-12 text-right padded padded-b-0 z-index">
-                    <div class="padded-r col-12-middle address">
+                <div class="col-6_sm-12 text-right padded padded-b-1 z-index md-left sm-center ">
+                    <div class="col-12-middle address">
                         <p class="font-weight-bold">Contact us.</p>
                         <a href="mailto:hello@altitudehuts.com?subject=BookingEnquiry"> hello@altitudehuts.com</a> <br>
                         <a href="tel:+61-000-000">+61 000 000</a>
                     </div>
-                    <div clas="padded-r c ol-12-middle sm-hide">
+                    <div class="col-12-middle sm-hide">
                         <p class="font-weight-bold"> Visit us.</p>
                         <nav>
                             <a href="#">
@@ -258,13 +266,13 @@
                             <a href="#">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
+                            <a href="#" class="padded-r-0">
+                                <i class="fab fa-twitter padded-r-0"></i>
                             </a>
                         </nav>
                     </div>
-                    <div class="col-12 padded-r ">
-                        <p class="subtle">
+                    <div class="col-12">
+                        <p class="subtle padded-r-0">
                             Copyright 2021 (fill in I) Website by
                             <a class="subtle" href="#"> the Mahalo Creative</a>
                         </p>
