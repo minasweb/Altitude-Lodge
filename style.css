@@ -46,9 +46,11 @@ https://novel-mole.cloudvent.net/
     padding-right: 0.5rem;
    /* border: 2px solid rgb(242, 239, 239);*/
 } 
-h1,h2,h3,h4,h5,h6 {
-    /*  border: 2px solid rgb(228, 215, 215);*/
+/*h1,h2,h3,h4,h5,h6 {
+      border: 2px solid rgb(228, 215, 215);
 }
+*/
+
 /* Re-usable Utiity Classes  */
 .tall-5  { min-height: 5vh;  }
 .tall-10 { min-height: 10vh; }
@@ -155,10 +157,7 @@ h1,h2,h3,h4,h5,h6 {
 .font-weight-extra-bold {font-weight:800;}
 
 .uppercase{text-transform:uppercase;}
-
-
-
-
+.text-transform-none{text-transform:none;}
 
 
 /* General typography & universal styles  */
@@ -209,6 +208,7 @@ h3{
    letter-spacing:0.01em;
    text-transform:uppercase;
 }
+
 p{
     font-weight:300;
     line-height:1.5;
@@ -216,7 +216,6 @@ p{
     font-size:1.2rem;
     letter-spacing:0.02em;
 }
-
 
 .subtle{
     display:inline-block;
@@ -249,7 +248,7 @@ a:hover{
     font-family:"Crimson Text", serif;
     display: inline-block;
     border:2px solid white;
-    padding:0.5rem 1rem;
+    padding:0.5rem 1rem; 
     text-decoration:none;
 }
 
@@ -259,7 +258,8 @@ a:hover{
     margin:0.2rem;
     text-transform:capitalize;
     font-size:1.3rem;
-    font-weight:500;;
+    font-weight:500;
+    padding: .5rem 1rem .3rem 1rem;
 }
 
 .button-2{
@@ -372,15 +372,72 @@ nav a {
 
 .mobile-nav {
     display:none;
+    width:100%;
+    height:75vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #d3b4a2;
+    padding: 10%;
+    z-index: 8;
+}
 
+.mobile-nav a {
+    display: block;
+    padding: .4rem .1rem;
+    font-size: 2rem;
+    font-family: 'Source Sans Pro',sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: .1em;
+}
+
+.social a {
+    display: inline;
+    padding: .4rem 1em 0 0;
+    font-size: 1.2rem;
+}
+
+.nav-title{
+    font-family: 'Crimson Text',serif;
+    font-size: 1.1rem;
+    letter-spacing: .1em;
+    color: #3c3c3c;
+    padding: .8rem 0 .5rem;
+    display: block;
+    text-transform: uppercase;
+    margin-top: 1rem;
 }
 .mobile-menu-button{
-    display:none;
+  /*  display:none;*/
     position:absolute;
     padding:5%;
     right:0;
     z-index:10;
+    cursor:pointer;
 }
+
+
+
+/*
+.mobile-menu-button.nav-open .fa-bars {
+    display: none;
+  }
+
+.mobile-menu-button.nav-open .fa-times {
+    color: #fff;
+    display: block;
+  }*/
+
+.fa-times{display:none;}
+.mobile-menu-button .fa {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
 /*  Footer */
 
 footer .fa{
@@ -513,16 +570,18 @@ footer .fa{
 .xs-show, 
 .sm-show,
 .md-show, 
-.hide  {
+.hide,
+.mobile-show  {
 	display: none;
 }
+
 
 /* ------- MD Media Query (64em / 1024px) --------------- */ 
 /* - Styles added here will apply at devices smaller than 576px, or zoomed in equivalent */ 
 
 @media (max-width: 64em) {
 /* Temporary visual hint for responsive editing, delete later */
-body { border: 2px solid green;
+body {  border: 2px solid green;
         padding:0.5rem;}
 
   .md-show { display: block; }
@@ -532,7 +591,7 @@ body { border: 2px solid green;
   .md-text-left      { text-align: left; }
   .md-text-right     { text-align: right; }
 
-  .md-tall-80 {min-height:80vh;}
+  .md-tall-80        {min-height:80vh;}
 }
 
 
@@ -568,9 +627,14 @@ body { border: 2px solid green;
   .sm-padded-t-1     {padding-top:1rem;}
 
 
-  .sm-center        { text-align: center;}
   .logo h2           {font-size:2rem;}
   header h3          {font-size:11vw;}
+
+  .fa {
+    padding: 0 .1em;
+    font-size: 1em;
+  }
+  .mobile-show{display:block;}
 }
 
 /* ------- XS Media Query (36em / 576px) --------------- */ 
@@ -590,8 +654,12 @@ body { border: 2px solid green;
       line-height:1.1;
   }
 
-  .mobile-menu-button{display:block;}
   
+  .mobile-menu-button{display:block;}
+  .button-1{
+      font-size:1.2rem;
+      padding:.4rem .5rem .2rem .5rem;
+    }
 
 }
 
@@ -605,4 +673,7 @@ body { border: 2px solid green;
     }
 }
 
-
+/*Problems:
+-pictures don't work with lightgallery
+-gridlex doesn't adapt in media 
+-mobile-menu doesn't really work with the buttons
