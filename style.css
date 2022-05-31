@@ -325,7 +325,10 @@ nav a {
     color:#fff;
     font-size: 6rem;
 }
-
+/* brand icons in mobile-nav*/
+.fa-brands{
+    font-weight:400;
+}
 
 /*positioning*/
 
@@ -361,7 +364,6 @@ nav a {
 .z-index{
     z-index:3;
 }
-
 
 
 .gallery [class*="col-"]{
@@ -411,7 +413,7 @@ nav a {
     margin-top: 1rem;
 }
 .mobile-menu-button{
-  /*  display:none;*/
+    display:none;
     position:absolute;
     padding:5%;
     right:0;
@@ -421,23 +423,24 @@ nav a {
 
 
 
-/*
-.mobile-menu-button.nav-open .fa-bars {
-    display: none;
-  }
-
-.mobile-menu-button.nav-open .fa-times {
-    color: #fff;
-    display: block;
-  }*/
-
 .fa-times{display:none;}
+
 .mobile-menu-button .fa {
     margin: 0;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.5;
   }
+
+  
+.mobile-menu-button.nav-open .fa-bars{
+    display:none;
+}
+.mobile-menu-button.nav-open .fa-times{
+    display:block;
+    color:white;
+    font-size: 1.6rem
+}
 /*  Footer */
 
 footer .fa{
@@ -592,6 +595,8 @@ body {  border: 2px solid green;
   .md-text-right     { text-align: right; }
 
   .md-tall-80        {min-height:80vh;}
+
+  .absolute {position:initial;}
 }
 
 
@@ -627,7 +632,7 @@ body {  border: 2px solid green;
   .sm-padded-t-1     {padding-top:1rem;}
 
 
-  .logo h2           {font-size:2rem;}
+  h2                 {font-size:2rem;}
   header h3          {font-size:11vw;}
 
   .fa {
@@ -650,9 +655,11 @@ body {  border: 2px solid green;
 
   .xs-left{ text-align:left}
     h1{
-      font-size:1.4rem;
-      line-height:1.1;
+        font-size: 1.2rem;
+        padding-top: .5rem;
   }
+
+  h3{font-size:1.4rem}
 
   
   .mobile-menu-button{display:block;}

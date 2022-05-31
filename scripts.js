@@ -9,12 +9,13 @@ lightGallery(document.getElementById('lightgallery'), {
        
 $('.fa-bars').click(function(){
     $('.mobile-nav').slideToggle(500);  
-    $('.fa-times').slideToggle(500); 
-    $('.fa-bars').fadeToggle(500); 
+    $('.mobile-menu-button').toggleClass('nav-open'); 
     });
-
-
-    
+ 
+$('.fa-times').click(function(){
+    $('.mobile-nav').slideToggle(500);  
+    $('.mobile-menu-button').toggleClass('nav-open'); 
+    });    
 });
 
 
