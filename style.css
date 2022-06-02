@@ -171,6 +171,7 @@ body {
     cursor: default;
     background-color:#faf9f9;
     display: block;
+    scroll-behavior:smooth;
 } 
 
  h1,h2,h3,h4,h5,h6 {
