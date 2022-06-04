@@ -194,6 +194,8 @@ h1{
     letter-spacing:2.24px;
     cursor:default;
     font-weight:700;
+    margin-bottom:0;
+    padding:0;
 }
 h2{
     text-transform:uppercase;
