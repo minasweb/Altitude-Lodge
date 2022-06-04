@@ -26,13 +26,6 @@ https://novel-mole.cloudvent.net/
 
 
 /* all these special gridlex styles on top, otherwise they will override other styles*/
-[class*="grid-"] > [class*="col-6"], [class*="grid_"] > [class*="col-6"], [class~="grid"] > [class*="col-6"] {
-    flex-basis: 50%;
-    max-width: 50%;
-}
-[class*="grid-"], [class*="grid_"], [class~="grid"] {
-    flex-flow:row wrap;
-}
 
 [class*="col"]  { padding: 0;}
 [class*="col-"] { flex: none;}
